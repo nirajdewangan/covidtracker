@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import DataTable, { createTheme } from 'react-data-table-component'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee, faArrowDown } from '@fortawesome/free-solid-svg-icons'
+import {  faArrowDown } from '@fortawesome/free-solid-svg-icons'
 
 export default function DataTableComp() {
   const [ volatile, setVolatile] = useState(
