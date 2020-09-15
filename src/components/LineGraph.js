@@ -52,7 +52,7 @@ const options = {
 
 const buildChartData = (data, casesType) => {
   let chartData = [];
-  let lastDataPoint;
+  //let lastDataPoint;
   data.response.reverse().map( (res) => {
   //casesType = casesType==='cases' ? 'cases' : 'deaths' 
    let newDataPoint;
@@ -88,13 +88,14 @@ const buildChartData = (data, casesType) => {
 function LineGraph({ casesType = 'cases' }) {
   const [data, setData] = useState({});
 
-  const [opt, setOpt] = useState({
-    ...options,
-    casesType,
+  //TODO: Deep cloning required
+  // const [opt, setOpt] = useState({
+  //   ...options,
+  //   casesType,
 
-    });
+  //   });
 
-  console.log("opt", opt);
+  // console.log("opt", opt);
   useEffect(() => {
     const fetchData = async () => {
       await fetch("https://covidincontext.22feetlabs.co/static/json/history_All.json") //("https://disease.sh/v3/covid-19/historical/all?lastdays=120")
@@ -126,7 +127,7 @@ function LineGraph({ casesType = 'cases' }) {
               },
             ],
           }}
-          options={ opt }
+          options={ options }
         />
       )}
     </div>
